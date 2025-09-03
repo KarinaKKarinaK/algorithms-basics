@@ -11,7 +11,7 @@ class Stack:
     def __init__(self):
         self.stack = []
 
-    def is_Empty(self):
+    def isEmpty(self):
         return len(self.stack) == 0
     
     def push(self, element):
@@ -29,3 +29,17 @@ class Stack:
     
     def size(self):
         return len(self.stack)
+    
+# Creating a stack:
+stack1 = Stack()
+
+stack1.push("fig1")
+stack1.push("fig2")
+stack1.push("fig3")
+
+print("Stack: ", stack1.stack)
+print("Pop: ", stack1.pop())
+print("Stack after Pop: ", stack1.stack)
+print("Peek: ", stack1.peek())
+print("isEmpty: ", stack1.isEmpty())
+print("Size: ", stack1.size())
