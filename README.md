@@ -1,4 +1,4 @@
-# This project is a compiltion of algorthms and data stcrutures in Python (and C++ later on)
+# This project is a compilation of algorthms and data stcrutures in Python (and C++ later on)
 
 ## Implemented ALgorithms:
 - Sorting: insertion sort, merge sort, quicksort (Lomuto partition)
@@ -9,10 +9,9 @@
 
 ### Visualization
 
-* For visualization I used Streamlit for a MVP (single‑file UI)
-##### The basic strcuture is:
+_For visualization I used Streamlit for a MVP (single‑file UI)_
 
--> app.py – 3 tabs, one page:
+#### The basic strcuture is --> app.py – 3 tabs, one page:
 
 1. Tab 1 – Sorting Visualizer:
 - Controls: array size, shuffle, step speed, algorithm select
