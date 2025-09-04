@@ -1,6 +1,8 @@
 # Stack, Queue, Deque (LIFO/FIFO/LILO demos)
 
 # STACK ============================================================================================================
+# LIFO: Last In First Out
+
 # Basic operations to do on stacks:
 # Push: Adds a new element on the stack.
 # Pop: Removes and returns the top element from the stack.
@@ -47,6 +49,8 @@ print("Size: ", stack1.size())
 
 
 # QUEUE ============================================================================================================
+# FIFO: First In First Out.
+
 # Basic operations to do on queues:
 # Enqueue: Adds a new element to the queue.
 # Dequeue: Removes and returns the first (front) element from the queue.
@@ -58,8 +62,37 @@ class Queue:
     def __init__(self):
         self.queue = []
 
-    def enqueue(self, element):
-        pass
+    def isEmpty(self):
+        return len(self.queue) == 0
 
-    def dequeue(self, element):
-        pass
+    def enqueue(self, element):
+        self.queue.append(element)
+
+    def dequeue(self):
+        if self.queue.isEmpty():
+            return "queue is empty"
+        return self.queue.pop(0)
+
+    def peek(self):
+        if self.queue.isEmpty():
+            return "queue is empty"
+        return self.queue[0]
+
+    def size(self):
+        return len(self.queue)
+    
+# Creating a queue
+queue1 = Queue()
+
+queue1.enqueue('A')
+queue1.enqueue('B')
+queue1.enqueue('C')
+print("Queue: ", queue1.queue)
+
+print("Dequeue: ", queue1.dequeue())
+
+print("Peek: ", queue1.peek())
+
+print("isEmpty: ", queue1.isEmpty())
+
+print("Size: ", queue1.size())
