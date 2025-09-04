@@ -96,3 +96,11 @@ print("Peek: ", queue1.peek())
 print("isEmpty: ", queue1.isEmpty())
 
 print("Size: ", queue1.size())
+
+# More variants of DS:
+
+# Deque (Double-Ended Queue): can insert/remove from both ends (generalizes both stack and queue).
+
+# Priority Queue / Heap: dequeue always removes the highest priority item, not just the oldest.
+
+# Circular Queue: queue that wraps around a fixed-size array.
