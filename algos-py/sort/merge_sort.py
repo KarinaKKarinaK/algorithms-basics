@@ -12,4 +12,18 @@
 # 4. Keep merging until there are no sub-arrays left.
 
 def merge_sort(list):
-    pass
+    length = len(list)
+
+    mid = length // 2
+
+    leftHalf = list[:mid]
+    rightHalf = list[mid:]
+
+    if length == 1:
+        return list
+
+    # list1, list2 = [], []
+
+    # for i in range(length/2):
+    #     if i != (length/2):
+    #         list1.append(list[i])
