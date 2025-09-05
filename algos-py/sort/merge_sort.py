@@ -43,16 +43,12 @@ def merge(left, right):
 
         result.extend(left[i:])
         result.extend(right[j:])
+        # .extend() adds multiple elements from an iterable (such as a list, tuple, set, or string) 
+        # to the end of an existing list.
 
+        return result
 
-
-
-
-
-
-
-
-
+# Testing merge sort
 
 mylist = [
     64, 34, 25, 12, 22, 11, 90, 5, 78, 45, 32, 67, 89, 23, 56, 99, 1, 77, 88, 100,
