@@ -1,4 +1,9 @@
 # QUICK SORT
+# As the name suggests, Quicksort is one of the fastest sorting algorithms.
+# The Quicksort algorithm takes an array of values, chooses one of the values as 
+# the 'pivot' element, and moves the other values so that lower values are on the 
+# left of the pivot element, and higher values are on the right of it.
+
 import time
 # How it works:
 
@@ -23,7 +28,7 @@ def quick_sort(list):
         else:
             low.append(item)
     
-    return quick_sort(low) + pivot + quick_sort(high)
+    return quick_sort(low) + [pivot] + quick_sort(high)
 
 
 mylist = [
