@@ -21,4 +21,12 @@ from collections import defaultdict
 
 class Graph:
     def __init__(self):
-        self.graph = defaultdict(list)
+        self.graph = defaultdict(list) # Using the defaultdict to store the graph
+
+    def add_edge(self, u, v):
+        self.graph[u].append[v]
+    
+    def BFS(self, root):
+        visited = set() # Create a visited array using the set() function
+
+graph1 = {0:[1, 2, 3], 1:[0, 2], 2:[0,1], 3:[0], 4:[2]}
