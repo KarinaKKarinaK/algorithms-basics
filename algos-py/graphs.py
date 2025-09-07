@@ -1,4 +1,5 @@
 from collections import defaultdict
+
 # BFS and DFS
 
 # BFS ============================================================================================================
@@ -26,7 +27,14 @@ class Graph:
     def add_edge(self, u, v):
         self.graph[u].append[v]
     
-    def BFS(self, root):
+    def bfs(self, root):
         visited = set() # Create a visited array using the set() function
+        queue = collections.deque([root])
+
+        while queue: # While queue is not empty
+            vertex = queue.popleft() # dequeues teh element rom teh left part and stores it as a vertex variable
+            visited.add(vertex) #Adding teh vertex to teh array of visited nodes
+
 
 graph1 = {0:[1, 2, 3], 1:[0, 2], 2:[0,1], 3:[0], 4:[2]}
+print(graph1.bfs(0))
