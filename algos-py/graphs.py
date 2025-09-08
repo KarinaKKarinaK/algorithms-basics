@@ -35,6 +35,13 @@ class Graph:
             vertex = queue.popleft() # dequeues teh element rom teh left part and stores it as a vertex variable
             visited.add(vertex) #Adding teh vertex to teh array of visited nodes
 
+            # Now you have to push all teh adjacent nodes (adjacent to teh node you just visited) to the queue (enqueue) 
+            # - on teh condition that they have not yet been visited
+
+            for i in graph[vertex]:
+                if i not in visited:
+                    queue.append(i)
+
 
 graph1 = {0:[1, 2, 3], 1:[0, 2], 2:[0,1], 3:[0], 4:[2]}
 print(graph1.bfs(0))
