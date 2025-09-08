@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, deque
 
 # BFS and DFS
 
@@ -27,18 +27,19 @@ class Graph:
     def add_edge(self, u, v):
         self.graph[u].append(v)
 
-    def bfs(self, root):
+    def bfs(graph, start):
         visited = set() # Create a visited array using the set() function
-        queue = collections.deque([root])
+        queue = deque([start])
 
         while queue: # While queue is not empty
-            vertex = queue.popleft() # dequeues teh element rom teh left part and stores it as a vertex variable
-            visited.add(vertex) #Adding teh vertex to teh array of visited nodes
+            node = queue.popleft() # dequeues teh element rom teh left part and stores it as a node variable
+            visited.add(node) #Adding teh node to teh array of visited nodes
+            print(node) # Printing the node
 
             # Now you have to push all teh adjacent nodes (adjacent to teh node you just visited) to the queue (enqueue) 
             # - on teh condition that they have not yet been visited
 
-            for i in self.graph[vertex]:
+            for i in graph[node]:
                 if i not in visited:
                     queue.append(i)
         return visited
@@ -50,17 +51,19 @@ class Graph:
     # Popular graph algorithms like Topological Sort, Strongly Connected Components, and solving puzzles like
     # mazes are based on DFS. DFS itself can be used to detect cycle in a directed and undirected graph, find connected components in a graph and many more problems.   
 
-    def dfs(self, root):
+    def dfs(graph, start):
         visited = set()
-        stack = [root]
+        stack = [start]
 
         while stack:
-            node = stack.pop
+            node = stack.pop()
 
             if node not in visited:
                 visited.add(node)
                 print(node)
-                stack.extend(reversed(self.graph[root]))
+                stack.extend(reversed(graph[node]))
+
+        return visited
 
 
 
@@ -77,8 +80,8 @@ graph = {
 
 # Test DFS
 print("DFS traversal starting from 1:")
-print(dfs(graph, 1))
+print(Graph.dfs(graph, 1))
 
 # Test BFS
 print("BFS traversal starting from 1:")
-print(bfs(graph, 1))
+print(Graph.bfs(graph, 1))
