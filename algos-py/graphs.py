@@ -42,7 +42,43 @@ class Graph:
                 if i not in visited:
                     queue.append(i)
         return visited
+    
+    # DFS ============================================================================================================
+    # Depth First Search (DFS) is a fundamental graph traversal algorithm. It begins with a
+    # node, then explores as far as possible along each branch before backtracking.
+    # DFS is different from BFS in a way that it goes deep into the graph whenever possible.
+    # Popular graph algorithms like Topological Sort, Strongly Connected Components, and solving puzzles like
+    # mazes are based on DFS. DFS itself can be used to detect cycle in a directed and undirected graph, find connected components in a graph and many more problems.   
+
+    def dfs(self, root):
+        visited = set()
+        stack = [root]
+
+        while stack:
+            node = stack.pop
+
+            if node not in visited:
+                visited.add(node)
+                print(node)
+                stack.extend(reversed(self.graph[root]))
 
 
-graph1 = {0:[1, 2, 3], 1:[0, 2], 2:[0,1], 3:[0], 4:[2]}
-print(graph1.bfs(0))
+
+
+# Example graph as adjacency list (nodes are numbers)
+graph = {
+    1: [2, 3],
+    2: [4, 5],
+    3: [6],
+    4: [],
+    5: [6],
+    6: []
+}
+
+# Test DFS
+print("DFS traversal starting from 1:")
+print(dfs(graph, 1))
+
+# Test BFS
+print("BFS traversal starting from 1:")
+print(bfs(graph, 1))
