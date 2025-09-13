@@ -9,21 +9,21 @@ import time
 # 4. If the value is found, return the target value index. If the target value is not found, return -1.
 
 
-def binary_search(array, x):
-    left = 0
-    right = len(array) - 1
+def binary_search(array, x): # takes in teh array and the item that is to be found (x)
+    left = 0 # sets the left pointer to the start of the array
+    right = len(array) - 1 # sets the right pointer to the end of the array
 
-    while left <= right:
-        mid = (left + right) // 2
+    while left <= right: #while teh left pointer is smaller than or equal to the right pointer
+        mid = (left + right) // 2# The middle index is calculated by taking the sum of the two pointers divided by 2
 
-        if array[mid] < x:
-            low = mid + 1
-        elif array[mid] > x:
-            high = mid -1
+        if array[mid] < x: # if the middle element in teh array is smaller than teh item to be found
+            left = mid + 1 #then the left pointer is set to be the middle item + 1
+        elif array[mid] > x: # if the middle element in teh array is greater than teh item to be found
+            right = mid -1 # then the right pointer is set to be the middle item - 1
         else:
-            return mid
+            return mid #otherwise it means that the middle item is the item to be found and its index is returned
 
-    return -1
+    return -1 # if the item is not found, -1 is returned
 
 array1 = [
     2187, 142, 2012, 1847, 1203, 229, 1732, 2123, 187, 2056, 1567, 2222, 198, 110, 2220, 1456, 172, 2099, 1345, 2100,
