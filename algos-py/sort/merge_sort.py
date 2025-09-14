@@ -17,32 +17,32 @@ def merge_sort(list):
 
     mid = length // 2
 
-    leftHalf = list[:mid]
-    rightHalf = list[mid:]
+    leftHalf = list[:mid] # Slicing the list from the start to the middle index
+    rightHalf = list[mid:] # Slicing the list from the middle index to the end
 
     if length == 1:
-        return list
+        return list # Base case: if the list has only one element, it is already sorted
     
-    sortedLeft = merge_sort(leftHalf)
-    rightLeft = merge_sort(rightHalf)
+    sortedLeft = merge_sort(leftHalf) # Recursively calling merge_sort on the left half
+    sortedRight = merge_sort(rightHalf) # Recursively calling merge_sort on the right half
 
-    return merge(leftHalf, rightHalf)
+    return merge(sortedLeft, sortedRight) #Merging the two sorted halves
 
 
-def merge(left, right):
-    result = []
-    i = j = 0
+def merge(left, right): # This i s a helper function that merges two sorted lists into one sorted list
+    result = [] # This will hold the merged list
+    i = j = 0 # i is the index for the left list, j is the index for the right list
 
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            result.append(left[i])
-            i += 1
+    while i < len(left) and j < len(right): # While there are still elements in both lists
+        if left[i] < right[j]: # If the current element in the left list is less than the current element in the right list
+            result.append(left[i]) # We add the element from the left list to the result
+            i += 1 # We increment the index for the left list
         else:
-            result.append(left[j])
-            j += 1
+            result.append(right[j]) # We add the element from the right list to the result
+            j += 1 # We increment the index for the right list
 
-        result.extend(left[i:])
-        result.extend(right[j:])
+        result.extend(left[i:]) # If there are any remaining elements in the left list, we add them to the result
+        result.extend(right[j:]) # If there are any remaining elements in the right list, we add them to the result
         # .extend() adds multiple elements from an iterable (such as a list, tuple, set, or string) 
         # to the end of an existing list.
 
