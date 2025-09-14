@@ -8,11 +8,11 @@ import time
 # 4. Go through the array as many times as there are values in the array.
 
 def bubble_sort(list):
-    n = len(list)
-    for i in range(n-1):
-        for j in range(n-i-1):
-            if list[j] > list[j + 1]:
-                list[j], list[j+1] = list[j+1], list[j]
+    n = len(list) # setting n as the size/length of the list
+    for i in range(n-1): #since indexes of elements start at 0 we lopp through n-1 - every element in teh list
+        for j in range(n-i-1): # again tehre is -1, but its n-i-1 because we comare teh value with the next value
+            if list[j] > list[j + 1]: # If the element on the left is greater than the element on the right
+                list[j], list[j+1] = list[j+1], list[j] # swap teh elements positions
     
     return list
 
