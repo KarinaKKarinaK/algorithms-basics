@@ -13,22 +13,23 @@ import time
 # 4. Do the same operations (recursively) for the sub-arrays on the left and right side of the pivot element.
 
 def quick_sort(list):
-    length = len(list)
+    length = len(list) 
 
-    if length <= 1:
+    if length <= 1: # BAse case: if the list has 0 or 1 element, it is already sorted
         return list
     
-    pivot = list.pop()
+    pivot = list.pop() # Settoing the pivot element to be the last element of the list
     # pop() is a list method that removes and returns the element of a list (if no argument is passed into ())
-    high, low = [], []
+    high, low = [], [] # Creating two empty lists to hold the higher and lower values than the pivot element
 
-    for item in list:
-        if item > pivot:
+    for item in list: # Looping through each element in the list
+        if item > pivot: # If the currently looped through item is larger than teh pivot element then it is appeneded to the "highy" list
             high.append(item)
-        else:
+        else: # Else it is appended to teh "low" list
             low.append(item)
     
-    return quick_sort(low) + [pivot] + quick_sort(high)
+    return quick_sort(low) + [pivot] + quick_sort(high) # Recursively calling quick_sort on the low and high lists and 
+  #concatenating them with the pivot element in between
 
 
 mylist = [
