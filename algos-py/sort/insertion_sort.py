@@ -8,13 +8,18 @@ import time
 
 
 def insertion_sort(list):
-    for i in range (1, len(list)):
-        j = i
-        while j > 0 and list[j - 1] > list[j]:
-            list[j], list[j - 1] = list[j - 1], list[j]
-            j -= 1
+    for i in range (1, len(list)): # Starting from teh second element of teh list we loop through the entire list
+        j = i # We set j to the current index of i which is the second element of the list
+        # Here j is used as the index of the element we are currently comparing
+        while j > 0 and list[j - 1] > list[j]: # While j is greater than 0 and the previous element is greater than the current element
+            # We swap teh elements
+            list[j], list[j - 1] = list[j - 1], list[j] 
+            j -= 1 # Now we decrement j by 1 to check the next element
     
     return list
+
+# This is different than bubble sort because in bubble sort we compare adjacent elements and swap them if they are in the wrong order
+# In insertion sort we take the current element and compare it to all the previous elements until we find the correct position for it
 
 
 mylist = [
