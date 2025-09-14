@@ -1,8 +1,9 @@
 import time
 
 def linear_search(array, x):
+    # Looping through every element in the array starting form teh first one
     for i in range(len(array)):
-        if array[i] == x:
+        if array[i] == x: # If the visited element is the item we're looking for (x) thern return it
             return i
         
 
